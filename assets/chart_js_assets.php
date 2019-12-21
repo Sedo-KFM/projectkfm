@@ -15,18 +15,14 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class chart_js_assets extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@app/components/chart.js';
     public $css = [
-        'css/site.css',
+        'css/chart.min.css',
     ];
     public $js = [
+        'js/chart.min.js',
     ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'app\assets\chart_js_assets'
-    ];
+    public $jsOptions = ['position' => \yii\web\View::POS_END];
 }
